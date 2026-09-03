@@ -9,7 +9,7 @@ type TreeDecorationProps = {
 };
 
 const DEFAULT_SRC = {
-  left: '/ganeshji-left6.png',
+  left: '/ganeshji-left7.png',
   right: '/ganeshji-right1.png',
 };
 

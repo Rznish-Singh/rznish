@@ -21,7 +21,7 @@ type ChatMessage = {
 const MAX_LENGTH = 1000;
 
 const suggestedQuestions = [
-  'What is rznish chatbot?',
+  'What is rznish ?',
   'How does rznish chatbot work?',
   'How can I customize rznish chatbot?',
   'How do I deploy rznish chatbot?',
@@ -135,8 +135,23 @@ export function AskAiPanel() {
           {messages.length > 0 && (
             <div className="flex flex-col gap-4">
               {messages.map((m, i) => (
-                <div key={i} className="flex flex-col gap-1">
-                  <div className="text-xs font-medium text-muted-foreground">
+                                <div
+                  key={i}
+                  className={
+                    'flex flex-col gap-1 rounded-lg px-3 py-2 ' +
+                    (m.role === 'user'
+                      ? 'ml-6 bg-blue-50 dark:bg-blue-950/40'
+                      : 'mr-6 bg-muted')
+                  }
+                >
+                  <div
+                    className={
+                      'text-xs font-medium ' +
+                      (m.role === 'user'
+                        ? 'text-blue-600 dark:text-blue-400'
+                        : 'text-muted-foreground')
+                    }
+                  >
                     {m.role === 'user' ? 'You' : 'Ask AI'}
                   </div>
                   <div className="whitespace-pre-wrap text-sm leading-relaxed">
