@@ -31,11 +31,12 @@ const features: {
     href: '/getting-started/introduction',
   },
   {
-    title: 'Secure Auth',
+    title: 'Auth book',
     description:
-      'Email/password and guest sessions, powered by Auth.js — no third-party sign-in required.',
+      ' It is a collection of guides, recommendations, and examples for implementing auth in web applications.',
     icon: <LockIcon className="size-5" />,
-    href: '/getting-started/introduction',
+    href: 'https://auth.pilcrowonpaper.com/',
+    external: true,
   },
   {
     title: 'Ask AI',
@@ -133,10 +134,10 @@ export default function HomePage() {
 </section>
       <section className="border-t pt-12">
         <h2 className="text-balance text-3xl font-bold tracking-tight md:text-4xl">
-          Timeline of rznish Ai
+          Timeline of rznish 
         </h2>
         <p className="mt-2 text-balance text-lg text-muted-foreground">
-          A timeline of the development and evolution of rznish Ai ...
+          A timeline of the development and evolution of rznish  ...
         </p>
       </section>
       <section className="border-t pt-12">

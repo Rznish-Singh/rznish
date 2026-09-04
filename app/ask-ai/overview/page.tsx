@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { DocsShell } from '@/components/docs/docs-shell';
 
 export const metadata = {
@@ -49,11 +50,14 @@ export default function AskAiOverviewPage() {
       <blockquote>
         Ask AI runs on the same Gemini API key as the main chat app (
         <code>GOOGLE_GENERATIVE_AI_API_KEY</code>), just configured separately for this docs site.
-        See <a href="/ask-ai/configuration">Configuring Ask AI</a>.
+        See <Link href="/ask-ai/configuration">Configuring Ask AI</Link>.
       </blockquote>
 
       <h2 id="suggested-questions">Suggested questions</h2>
-      <p>The panel ships with a few starter prompts:</p>
+      <p>
+        The panel ships with a few starter prompts, defined in{' '}
+        <code>lib/ask-ai.config.ts</code>:
+      </p>
       <ul>
         <li>What is rznish chatbot?</li>
         <li>How does rznish chatbot work?</li>
@@ -61,6 +65,24 @@ export default function AskAiOverviewPage() {
         <li>How do I deploy rznish chatbot?</li>
       </ul>
       <p>Click any of them to send it immediately, or type your own question.</p>
+
+      <h2 id="its-a-template">It&apos;s a drop-in template</h2>
+      <p>
+        Ask AI isn&apos;t specific to this site — it&apos;s built as a small, self-contained
+        feature (6 files, one config object, one env var) meant to be copied into any Next.js
+        project. Every piece of branding, copy, and color lives in a single file,{' '}
+        <code>lib/ask-ai.config.ts</code>, so reusing it elsewhere is usually just:
+      </p>
+      <ol>
+        <li>Copy the files over.</li>
+        <li>Edit the config object.</li>
+        <li>Set your own Gemini API key.</li>
+      </ol>
+      <p>
+        See <Link href="/ask-ai/configuration">Configuration</Link> for the full file list, the
+        complete copyable source, and exactly which file to edit for any given change — content or
+        UI.
+      </p>
     </DocsShell>
   );
 }
